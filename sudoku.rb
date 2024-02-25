@@ -25,6 +25,11 @@ class Board
     # substitute random numbers for zeroes depending on level
   end
 
+  def valid_numbers?
+    # check that numbers 1..9 appear exactly once in an array
+    sort == [1, 2, 3, 4, 5, 6, 7, 8, 9]
+  end
+
   def create_columns
     # create an array of 9 empty arrays to represent the columns
     # iterate through rows
@@ -38,26 +43,43 @@ class Board
     columns
   end
 
-  def valid_numbers?
-    # check that numbers 1..9 appear exactly once in an array
-    sort == [1, 2, 3, 4, 5, 6, 7, 8, 9]
-  end
+  def valid_columns?
+    # check that integers 1..9 appear in each column exactly once
 
-  def valid_vertical?
     create_columns.all? do |column|
       column.valid_numbers?
     end
   end
 
-  def valid_sector?
-    # check that numbers 1..9 appear in each 3x3 grid exactly once
+  def create_sectors
+    # for row arrays 0-2
+      # shovels elements 0-2 into sector array 0
+      # shovels elements 3-5 into sector array 1
+      # shovels elements 6-8 into sector array 2
+    # for row arrays 3-5
+      # shovels elements 0-2 into sector array 3
+      # shovels elements 3-5 into sector array 4
+      # shovels elements 6-8 into sector array 5
+    # for row arrays 6-8
+      # shovels elements 0-2 into sector array 6
+      # shovels elements 3-5 into sector array 7
+      # shovels elements 6-8 into sector array 8
+
+    sectors = Array.new(9) {Array.new}
+    @grid.each do |row|
+      sector.each_with_index
+    end
+  end
+
+  def valid_sectors?
+    # check that integers 1..9 appear in each 3x3 section exactly once
 
   end
 
   def valid_placement?
     # if all 3 dimensions are valid placements, true
     # horizontal validity is ensured upon row generation
-    if valid_vertical? && valid_sector?
+    if valid_columns? && valid_sectors?
       true
     end
   end
@@ -112,4 +134,4 @@ end
 board = Board.new
 # board.example_grid
 # board.print_grid
-puts board.create_columns
+p board.create_columns
