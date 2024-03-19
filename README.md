@@ -1,6 +1,6 @@
 # Sudoku Generator
 ---
-This is a program which generates a valid 9x9 Sudoku puzzle. 
+This is a program which, once completed, will generate a valid 9x9 Sudoku puzzle. 
 
 A valid Sudoku puzzle must have numbers 1-9 exactly once in all 9 of each of the following configurations:
 - 3x3 grid
