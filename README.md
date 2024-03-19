@@ -7,6 +7,6 @@ A valid Sudoku puzzle must have numbers 1-9 exactly once in all 9 of each of the
 - row
 - column
 
-This project is currently a ==work in progress==. I will update the documentation once completed. This project started out as a prompt I was given during a technical interview, and I am chipping away at solving it in my free time.
+This project is currently a **work in progress**. I will update the documentation once completed. This project started out as a prompt I was given during a technical interview, and I am chipping away at solving it in my free time.
 
 Thanks for stopping by :wave:
